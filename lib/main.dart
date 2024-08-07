@@ -38,18 +38,18 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         scaffoldBackgroundColor: Colors.white,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: Colors.blue),
+        floatingActionButtonTheme:
+            FloatingActionButtonThemeData(backgroundColor: Colors.blue),
         cardTheme: const CardTheme(surfaceTintColor: Colors.white),
-        dialogTheme: const DialogTheme(surfaceTintColor: Colors.white, backgroundColor: Colors.white),
+        dialogTheme: const DialogTheme(
+            surfaceTintColor: Colors.white, backgroundColor: Colors.white),
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
           title: Text('Catatan Keuangan',
-              style: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.white)),
+              style: const TextStyle(fontSize: 20, color: Colors.white)),
           bottom: setTabBar(),
         ),
         body: TabBarView(

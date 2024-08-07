@@ -88,8 +88,7 @@ class DatabaseHelper {
   }
 
   Future<int?> deleteData(int id) async {
-    final response =
-        await http.delete(Uri.parse('$baseUrl/deletePemasukan/$id'));
+    final response = await http.delete(Uri.parse('$baseUrl/delete/$id'));
     if (response.statusCode == 200) {
       return jsonDecode(response.body)['deleted'];
     }
