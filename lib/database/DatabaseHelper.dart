@@ -5,7 +5,7 @@ import 'dart:convert';
 
 class DatabaseHelper {
   static const String baseUrl =
-      'http://192.168.208.40:8000/api'; // Ganti dengan URL API Anda
+      'http://10.252.133.74:8000/api'; // Ganti dengan URL API Anda
 
   Future<int?> cekDataPemasukan() async {
     final response = await http.get(Uri.parse('$baseUrl/cekDataPemasukan'));

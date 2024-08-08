@@ -40,12 +40,14 @@ class _PagePengeluaranState extends State<PagePengeluaran> {
 
   //cek jumlah total uang
   Future<void> getJmlUang() async {
-    int? checkJmlUang = await databaseHelper.getJmlPengeluaran();
+    int? checkJmlUang = await databaseHelper.getJmlPemasukan();
+    int? checkJmlPengeluaran = await databaseHelper.getJmlPengeluaran();
     setState(() {
       if (checkJmlUang == 0) {
         strJmlUang = 0;
       } else {
-        strJmlUang = checkJmlUang!;
+        strJmlUang = checkJmlUang! - checkJmlPengeluaran!;
+        debugPrint(checkJmlPengeluaran.toString());
       }
     });
   }
@@ -110,7 +112,7 @@ class _PagePengeluaranState extends State<PagePengeluaran> {
                   borderRadius: BorderRadius.circular(10)),
               color: Colors.white,
               child: ListTile(
-                title: Text('Total Pengeluaran Bulan Ini',
+                title: Text('Total Saldo',
                     style: const TextStyle(fontSize: 14, color: Colors.black)),
                 subtitle: Padding(
                   padding: const EdgeInsets.only(top: 8),
